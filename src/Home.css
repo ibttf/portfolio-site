@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+.home{
+    margin: 0;
+    background-color: #141414;
+}
+
+
+/* BACKGROUND */
+.background{
+    height: 100vh;
+
+}
+.hero-background{
+    position: absolute;
+    z-index: 0;
+    max-height: 100vh;
+    width: 100vw;
+    max-width:100%;  
+}
+
+/* HERO */
+.hero{
+    text-align: center;
+    position: relative;
+    margin: 0;
+    line-height: 0;
+    padding-top: 30vh;
+}
+.hero >h1{
+    font-size: 12vw;
+    color:rgb(255, 255, 255);
+}
+.hero> h2{
+    font-size: 1.5vw;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+    letter-spacing: .1em;
+}
+
+
+/* NAVBAR */
+.navbar{
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    text-align: right;
+    padding: 0 26vw;
+    padding-top:.5vw;
+    padding-bottom: .5vw;
+    color: white;
+
+}
+.navbar-item{ 
+    width: 10vw;
+    transition: 300ms;
+}
+.navbar-item:hover{ 
+    cursor: pointer;
+}
+.navbar-item > p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    margin: 9px;
+
+}
+.navbar-item > h6{
+    margin: 0;
+    line-height: 0px;
+    font-size: 15px;
+}
+
+.sticky{
+    position: sticky;
+    top: 0;
+    color: rgb(196, 164, 196);
+    height: 5vh;
+    background-color: black;
+}
+
+
+
+.container {
+ display: flex;
+ position: relative;
+ padding-top: 10%;
+ justify-content: center;
+ align-items: center;
+}
+
+.chevron {
+  position: absolute;
+  width: 2.5em;
+  height: 0.48em;
+  opacity: 0;
+  transform: scale(0.3);
+  animation: move-chevron 3s ease-out infinite;
+}
+
+.chevron:first-child {
+  animation: move-chevron 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+  animation: move-chevron 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+ content: '';
+ position: absolute;
+ top: 0;
+ height: 100%;
+ width: 50%;
+ background: white;
+}
+
+.chevron:before {
+ left: 0;
+ transform: skewY(30deg);
+}
+
+.chevron:after {
+ right: 0;
+ width: 50%;
+ transform: skewY(-30deg);
+}
+
+@keyframes move-chevron {
+	 25% {
+		 opacity: 1;
+	}
+	 33.3% {
+		 opacity: 1;
+		 transform: translateY(2.28em);
+	}
+	 66.6% {
+		 opacity: 1;
+		 transform: translateY(3.12em);
+	}
+	 100% {
+		 opacity: 0;
+		 transform: translateY(4.8em) scale(0.5);
+	}
+}
+ 
+
+
+
+
+/* MY SKILLS */
+
+.skills{
+    position: relative;
+    color: white;
+    padding: 0% 0 10% 0;
+    height: fit-content;
+    font-size: 40px;
+
+}
+.skills > h1{
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    font-size: 7vw;
+}
+
+.skills-box{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap:4px;
+    grid-row-gap: 0px;
+    margin: 2% 18%;
+    border: 4px solid rgb(197, 197, 197);
+
+}
+
+.skills-box-item{
+    border-right: 4px solid rgb(197, 197, 197);
+
+}
+.right-skills-box{
+    border-right: none;
+}
+.skills-box-icon{
+    padding-right: 30px;
+    font-size: 2.5vw;
+}
+.skills-box-item-first{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+.skills-box-item-first > h6{
+    font-weight: normal;
+    font-family: "Lato";
+
+    font-size: 1.8vw;
+    line-height: 1.9vw;
+    margin: 25px 0;
+}
+.skills-box-item-first > h6 > span{
+    text-decoration: underline;
+    text-decoration-color: pink;
+    text-decoration-thickness: .4vw;
+}
+.second > h6 > span{
+    text-decoration-color: lightblue;
+}
+.third > h6 > span{
+    text-decoration-color: rgb(220, 247, 220);
+}
+
+.skills-box-item-second{
+    position: relative;
+    display:flex;
+    padding: 0 10% 0 5%;
+    align-items: center;
+    margin-top: -1vw;
+}
+.skills-box-item-second > h6{
+    font-weight: lighter;
+    font-size: 1.1vw;
+
+    margin: 0;
+    font-family: monospace;
+    color: rgb(218, 216, 216);
+}
+.prefix-rod{
+    padding-right: 1vw;
+    color: lightgray;
+    opacity: .5;
+    margin:0;
+}
+.prefix-rod > p{
+    font-size: 7vw;
+    line-height: 0;
+    transform: scaleX(0.2);
+    margin: -30px 0 5px 0;
+}
+.prefix-rod > h6{
+    line-height: 0;
+
+    font-size: 1vw;
+
+}
+.code-snippet{
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    top: 2%;
+    opacity: 0.2;
+}
+.code-snippet >img {
+    margin-top: -10%;
+    width: 40vw;
+}
+
+/* MISC */
+.hover{
+    color: rgb(226, 226, 226);
+}
+
+.border{
+    height: 10px;
+    background-color: white;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 1400px) {
+    
+    .hero-background {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 100vh;
+    object-fit: cover;
+    }
+
+    .navbar{
+    padding-left: 15vw;
+
+    }
+
+    .navbar-item{ 
+        width: 15vw;
+    }
+    .navbar-item > p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 6px;
+
+    }
+    .navbar-item > h6{
+        margin: 0;
+        font-size: 10px;
+        line-height: 0px;
+
+    }
+
+
+
+    .skills-box{
+
+        margin: 2% 3%;
+
+
+    }
+    .skills-box-item-second > h6{
+
+        font-size: 1.6vw;
+
+
+    }
+
+}
+
+
+
+@media only screen and (max-width: 750px) {
+    .skills-box{
+        grid-template-columns: repeat(1, 1fr);
+        }
+        
+    .skills-box-item{
+        border-bottom: 4px solid rgb(197, 197, 197);
+
+    }
+    .right-skills-box{
+        border-bottom: none;
+    }
+    .skills-box-icon{
+        padding-right: 30px;
+        font-size: 12vw;
+    }
+    .skills-box-item-first{
+        justify-content: left;
+        padding-left: 10%;
+
+    }
+    .skills-box-item-first > h6{
+        font-size: 6vw;
+        line-height: 8vw;
+
+    }
+    .skills-box-item-first > h6 > span{
+        text-decoration-thickness: 2vw;
+    }
+    .second > h6 > span{
+        text-decoration-color: lightblue;
+    }
+    .third > h6 > span{
+        text-decoration-color: rgb(220, 247, 220);
+    }
+
+    .skills-box-item-second{
+
+        margin-top: -5vw;
+        padding-bottom: 5%;
+    }
+    .skills-box-item-second > h6{
+        font-weight: lighter;
+        font-size: 2vw;
+
+
+    }
+
+    .prefix-rod > p{
+        font-size: 10vw;
+
+    }
+    .prefix-rod > h6{
+        line-height: 0;
+
+        font-size: 1.3vw;
+
+    }
+    .code-snippet >img {
+        width: 80vw;
+    }
+
+}
+@media only screen and (max-width: 400px) {
+    .navbar{
+    padding-left: 0vw;
+    }
+
+    .navbar-item{ 
+        width: 22vw;
+    }
+    .navbar-item > p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 5px;
+
+    }
+    .navbar-item > h6{
+        margin: 0;
+        font-size: 8px;
+        line-height: 0px;
+
+    }
+
+ 
+
+}
