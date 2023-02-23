@@ -6,7 +6,12 @@ import mockup from './reviewordmockup.png'
 import arrow from "./arrow.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faComputer
+    faComputer,
+    faLocationDot,
+    faPhone,
+    faEnvelope,
+    faPlane,
+    faPaperPlane
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -41,7 +46,7 @@ const Home = () => {
     },[]);
 
     return (
-            <div className="home">
+            <div id="home">
             <div className={`navbar ${sticky? "sticky": ""}`}>
                 {/* logo here */}
                 <div className={`navbar-item ${isHome? "hover" : ""}`} onMouseEnter={()=>{setIsHome(true)}} onMouseLeave={()=>{setIsHome(false)}}>
@@ -63,7 +68,7 @@ const Home = () => {
 
             </div>
 
-            <div className="background">
+            <div id="background">
                 <img src={background} className="hero-background"></img>
                 <div className="hero">
                     <h1>ROY LEE</h1>
@@ -79,7 +84,7 @@ const Home = () => {
 
 
 
-            <div className="skills">
+            <div id="skills">
                 <h1>My Skills</h1>
                 <div className="skills-box">
                     <div className="skills-box-item">
@@ -147,7 +152,7 @@ const Home = () => {
             </div>   
 
 
-            <div className="projects">
+            <div id="projects">
                 <div className="projects-left">
                     <h1>My Work</h1>
                     <h3>Deployed web application for peer essay reviewing using a React frontend and a Ruby on Rails backend, hosted through Netlify and Heroku. Uses a local postgreSQL database and fetch to make requests.</h3>
@@ -164,10 +169,71 @@ const Home = () => {
             </div>
 
 
-            <div className= "work"></div>
+    <div id="contact">
+    
+            <h1 className="section-header">Contact ME</h1>
 
+            <h2>Available for professional work and select freelance opportunities</h2>
+            
+            <div className="contact-wrapper">
+            
+                
+                <form id="contact-form" className="form-horizontal" role="form">
+                
+                    <div className="form-group">
+                        <div className="col-sm-12">
+                        <input type="text" className="form-control" id="name" placeholder="NAME" name="name" value="" required />
+                        </div>
+                    </div>
 
-            <div className="footer"></div>
+                    <div className="form-group">
+                        <div className="col-sm-12">
+                        <input type="email" className="form-control " id="email" placeholder="EMAIL" name="email" value="" required />
+                        </div>
+                    </div>
+
+                    <textarea className="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+                    
+                    <button className="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                        <div className="alt-send-button">
+                        <FontAwesomeIcon icon={faPaperPlane} className="fa fa-paper-plane fa-2x" /><span className="send-text">SEND</span>
+                        </div>
+                    
+                    </button>
+                
+                </form>
+                
+
+                
+                <div className="direct-contact-container">
+
+                    <ul className="contact-list">
+                    <li className="list-item"><FontAwesomeIcon icon={faLocationDot} className="fa fa-map-marker fa-2x"/><span className="contact-text place">Suwanee, GA</span></li>
+                    
+                    <li className="list-item"><FontAwesomeIcon icon={faPhone} className="fa fa-phone fa-2x"/><span className="contact-text phone"><a href="tel:1-678-677-0573" title="Give me a call">(678) 677-0573</a></span></li>
+                    
+                    <li className="list-item"><FontAwesomeIcon icon={faEnvelope} className="fa fa-envelope fa-2x"/><span className="contact-text gmail form-email"><a href="mailto:#leeroy0912@yahoo.com" title="Send me an email">leeroy0912@yahoo.com</a></span></li>
+                    
+                    </ul>
+
+                    <ul className="social-media-list">
+                    <li><a href="#" target="_blank" className="contact-icon">
+                        <i className="fa fa-github" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="#" target="_blank" className="contact-icon">
+                        <i className="fa fa-codepen" aria-hidden="true"></i></a>
+                    </li>
+
+                    </ul>
+ 
+                    <div className="copyright">&copy; 2023 Roy Lee. All Rights Reserved</div>
+
+                </div>
+                
+            </div>
+            
+            </div>
+
         </div>
     );
 }
