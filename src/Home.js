@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import "./Home.css"
 import background from "./background2.jpg"
 import snippet from "./codesnippet.jpg"
+import mockup from './reviewordmockup.png'
+import arrow from "./arrow.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faComputer
@@ -146,7 +148,19 @@ const Home = () => {
 
 
             <div className="projects">
-            
+                <div className="projects-left">
+                    <h1>My Work</h1>
+                    <h3>Deployed web application for peer essay reviewing using a React frontend and a Ruby on Rails backend, hosted through Netlify and Heroku. Uses a local postgreSQL database and fetch to make requests.</h3>
+                </div>
+                <div className="projects-right">
+                    <img src={mockup}></img>
+                    <div className="featured-project">
+                        <img src={arrow}></img>
+                        <h2>Featured Project</h2>
+                        <h3>Revieword</h3>
+                        <button>View Project</button>
+                    </div>
+                </div>
             </div>
 
 

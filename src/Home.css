@@ -259,6 +259,71 @@
     width: 40vw;
 }
 
+/* PROJECTS */
+.projects{
+    display: flex;
+    width: 70vw;
+    margin: -10% auto 0 auto;
+    padding-bottom: 10%;
+    justify-content: center;
+    align-items: center;
+}
+.projects-left{
+    color: white;
+}
+.projects-left >h1{
+    font-size: 6vw;
+    font-family: "Lato", sans-serif;
+}
+
+.projects-left >h3{
+    font-size: 1.3vw;
+    font-weight: lightest;
+    font-family: monospace;
+    letter-spacing: .1em;
+    
+}
+
+.projects-right > img{
+    width: 40vw;
+    position: relative;
+    margin-top: 20%;
+    margin-bottom: 0;
+}
+.featured-project{
+    margin-top: -20%;
+    margin-left: -70%;
+    position: relative;
+    text-align :center;
+    color: white;
+    font-family: monospace;
+}
+.featured-project > img {
+    width: 8vw;
+    transform: scaleY(-1) rotate(15deg);
+    margin-bottom: 5%;
+    margin-right: 2%;
+
+}
+.featured-project > h2{
+    font-size: 1.5vw;
+    margin: 0;
+    line-height: 0;
+    font-family: "Lato", sans-serif;
+}
+.featured-project > h3{
+    font-size: 2.5vw;
+    line-height: 0;
+    letter-spacing: 0.05em;
+}
+.featured-project >button {
+    border: none;
+    border-radius: .1vw;
+    padding: 1vw 1.5vw;
+    background-color: rgb(165, 165, 252);
+    font-size: 1vw;
+    font-family: monospace;
+}
 /* MISC */
 .hover{
     color: rgb(226, 226, 226);
@@ -322,6 +387,18 @@
         font-size: 1.6vw;
 
 
+    }
+
+    .projects-left >h1{
+        font-size: 6vw;
+        font-family: "Lato", sans-serif;
+    }
+
+    .projects-left >h3{
+        font-size: 1.5vw;
+    }
+    .projects-right > img {
+        width: 50vw;
     }
 
 }
@@ -390,6 +467,38 @@
         width: 80vw;
     }
 
+    .projects {
+        display: block;
+        width: 90vw;
+    }
+    .projects-left > h1{
+        font-size: 10vw;
+    }
+    .projects-left > h3 {
+        font-size: 3vw;
+    }
+    .projects-right {
+        margin-top: -20%;
+    }
+    .projects-right > img {
+        width: 90vw;
+    }
+    .featured-project > img{
+        width: 15vw;
+        margin-right: 5%;
+    }
+    .featured-project > h2{
+        font-size: 3vw;
+    }
+    .featured-project > h3{
+        font-size: 5vw;
+    }
+    .featured-project > button {
+        font-size: 3vw;
+        border-radius: 10px;
+        padding: 2vw 3vw;
+    }
+    
 }
 @media only screen and (max-width: 400px) {
     .navbar{
