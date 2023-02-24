@@ -4,6 +4,8 @@ import background from "./background2.jpg"
 import snippet from "./codesnippet.jpg"
 import mockup from './reviewordmockup.png'
 import arrow from "./arrow.png"
+import project1 from "./project1.png"
+import project4 from "./project4.JPG"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faComputer,
@@ -153,19 +155,42 @@ const Home = () => {
 
 
             <div id="projects">
-                <div className="projects-left">
-                    <h1>My Work</h1>
-                    <h3>Deployed web application for peer essay reviewing using a React frontend and a Ruby on Rails backend, hosted through Netlify and Heroku. Uses a local postgreSQL database and fetch to make requests.</h3>
-                </div>
-                <div className="projects-right">
-                    <img src={mockup}></img>
-                    <div className="featured-project">
-                        <img src={arrow}></img>
-                        <h2>Featured Project</h2>
-                        <h3>Revieword</h3>
-                        <button>View Project</button>
+                <div className="projects-hero">
+                    <div className="projects-left">
+                        <h1>My Work</h1>
+                        <h3>Deployed web application for peer essay reviewing using a React frontend and a Ruby on Rails backend, hosted through Netlify and Heroku. Uses a local postgreSQL database and fetch to make requests.</h3>
+                    </div>
+                    <div className="projects-right">
+                        <img src={mockup}></img>
+                        <div className="featured-project">
+                            <img src={arrow}></img>
+                            <h2>Featured Project</h2>
+                            <h3>Revieword</h3>
+                            <button>View Project</button>
+                        </div>
                     </div>
                 </div>
+                <div className="projects-display">
+                    <div className="div1 projects-display-item">
+                        <img src={project1}></img>
+                        <div className="projects-display-content">
+                            <h4>Netflix Fullstack Clone</h4>
+                            <p>Web Development</p>
+                        </div>
+                    </div>
+                    <div className="div2 projects-display-item"></div>
+                    <div className="div3 projects-display-item"></div>
+                    <div className="div4  projects-display-item projects-display-big-item">
+                        <img src={project4}></img>
+                         <div className="projects-display-content big-projects-display-content">
+                            <h4>Revieword - Peer Essay Reviewing Web Application</h4>
+                            <p>Web Development</p>
+                        </div>
+                    </div>
+                    <div className="div5 projects-display-item"></div>
+
+                </div>
+
             </div>
 
 

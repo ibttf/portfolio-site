@@ -4,6 +4,7 @@
 #home{
     margin: 0;
     background-color: #141414;
+    overflow-x: hidden;
 }
 
 
@@ -260,7 +261,7 @@
 }
 
 /* PROJECTS */
-#projects{
+.projects-hero{
     display: flex;
     width: 70vw;
     margin: -10% auto 0 auto;
@@ -278,9 +279,8 @@
 
 .projects-left >h3{
     font-size: 1.3vw;
-    font-weight: lightest;
+    font-weight: 200;
     font-family: monospace;
-    letter-spacing: .1em;
     
 }
 
@@ -324,6 +324,69 @@
     font-size: 1vw;
     font-family: monospace;
 }
+
+
+/* PROJECTS DISPLAY */
+
+
+.projects-display {
+display: grid;
+grid-template-columns: repeat(6, 1fr);
+grid-template-rows: repeat(8, 1fr);
+grid-column-gap: 1vw;
+grid-row-gap: 1vw;
+padding: 0 16%;
+}
+
+.projects-display-item{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(41, 41, 41);
+    border-radius: 20px;
+}
+.projects-display-item > img {
+    max-width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.projects-display-content {
+    font-family: "Lato", sans-serif;
+    padding: 30px 50px 0px 50px;
+
+}
+
+.projects-display-content > h4{
+    font-size: 1.6vw;
+    margin: 10px;
+    color: white;
+}
+
+.projects-display-content > p{
+    font-size: 0.8vw;
+    margin:10px 10px;
+    color: rgb(179, 179, 179);
+}
+
+.big-projects-display-content > h4{
+    font-size: 2vw;
+    margin-top: -10px;
+}
+.big-projects-display-content > p{
+    font-size: 1vw;
+    margin-bottom: 1vw;
+}
+
+.div1 {
+     grid-area: 1 / 1 / 3 / 3; 
+     color: white;
+    }
+
+.div2 { grid-area: 1 / 3 / 3 / 5; }
+.div3 { grid-area: 1 / 5 / 3 / 7; }
+.div4 { grid-area: 3 / 1 / 6 / 5; }
+.div5 { grid-area: 3 / 5 / 5 / 7; }
+
+
 /* MISC */
 .hover{
     color: rgb(226, 226, 226);
@@ -334,7 +397,9 @@
     background-color: white;
     position: relative;
 }
-
+button:hover{
+    cursor:pointer;
+}
 
 
 
@@ -345,6 +410,8 @@
   width: 100%;
   height: 100%;
   padding-bottom: 5%;
+  margin-top: -20%;
+  overflow-x: hidden;
 }
 #contact > h2{
     text-align: center;
@@ -398,26 +465,30 @@ textarea {
 .send-button {
   margin-top: 15px;
   height: 34px;
-  width: 432px;
+  width: 390px;
   overflow: hidden;
   transition: all .2s ease-in-out;
   background-color: rgb(165, 165, 252);
   border: 5px solid rgb(165, 165, 252);
 }
+.fa:hover{
+    color:rgb(165, 165, 252);
+}
 .fa-paper-plane{
     color: white;
 }
 .form-control{
-    width: 100%;
+    width: 90%;
     margin: 5px 0;
     border-radius: 5px;
     padding: 15px;
     border: 2px solid rgb(197, 197, 197);
 }
 .alt-send-button {
-  width: 100%;
+  width: 90%;
   height: 34px;
   transition: all .2s ease-in-out;
+  color: white;
 }
 
 .send-text {
@@ -671,6 +742,49 @@ input {
         width: 50vw;
     }
 
+
+        
+    .projects-display {
+        display: flex;
+        flex-direction: column;
+        padding: 0 25%;
+    }
+
+
+
+    .projects-display-content {
+        font-family: "Lato", sans-serif;
+        padding: 0px 20px 0px 20px;
+
+    }
+
+    .projects-display-content > h4{
+        font-size: 2vw;
+        margin: 10px;
+        color: white;
+    }
+
+    .projects-display-content > p{
+        font-size: 1vw;
+        margin:10px 10px;
+        color: rgb(179, 179, 179);
+    }
+
+    .big-projects-display-content > h4{
+        font-size: 2vw;
+        margin: 10px;
+        color: white;
+    }
+    .big-projects-display-content > p{
+        font-size: 1vw;
+        margin:10px 10px;
+        color: rgb(179, 179, 179);
+    }
+
+    #contact{
+        margin-top: 10%;
+    }
+
 }
 
 
@@ -737,7 +851,8 @@ input {
         width: 80vw;
     }
 
-    .projects {
+
+    .projects-hero {
         display: block;
         width: 90vw;
     }
