@@ -1,11 +1,15 @@
 import React, {useState, useEffect} from 'react';
+import emailjs from "@emailjs/browser"
 import "./Home.css"
 import background from "./background2.jpg"
 import snippet from "./codesnippet.jpg"
 import mockup from './reviewordmockup.png'
 import arrow from "./arrow.png"
 import project1 from "./project1.png"
+import project2 from "./project2.jpg"
+import project3 from "./project3.png"
 import project4 from "./project4.JPG"
+import project5 from "./project5.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faComputer,
@@ -36,6 +40,18 @@ const Home = () => {
     const [isContact,setIsContact]=useState(false);
     const [sticky, setSticky]=useState(false);
 
+    const [isOne,setIsOne]=useState(false);
+    const [isTwo,setIsTwo]=useState(false);
+    const [isThree, setIsThree]=useState(false);
+    const [isFour,setIsFour]=useState(false);
+    const [isFive,setIsFive]=useState(false);
+
+    const [values, setValues] = useState({
+        fullName: '',
+        email: '',
+        message: ''
+      });
+    
 
         //useEffect to figure out the scroll for the navbar appearance
     useEffect(() => {
@@ -47,25 +63,50 @@ const Home = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     },[]);
 
+    const handleFormChange = (e) => {
+
+        setValues(values => ({
+          ...values,
+          [e.target.name]: e.target.value
+        }))
+    }
+
+    const handleFormSubmit=(e)=>{
+        e.preventDefault();
+        emailjs.send("service_x93espq","template_054xuz2",values,"LhaxNOBSEpss1dCSG").then(response=>alert("Sent!"));
+        setValues({
+            fullName: '',
+            email: '',
+            message: ''
+          });
+    }
     return (
             <div id="home">
             <div className={`navbar ${sticky? "sticky": ""}`}>
                 {/* logo here */}
                 <div className={`navbar-item ${isHome? "hover" : ""}`} onMouseEnter={()=>{setIsHome(true)}} onMouseLeave={()=>{setIsHome(false)}}>
                     <p>01</p>
-                    <h6>// home</h6>
+                    <a href="#home">
+                          <h6>// home</h6>
+                    </a>
+
                 </div>
                 <div className={`navbar-item ${isSkills? "hover" : ""}`} onMouseEnter={()=>{setIsSkills(true)}} onMouseLeave={()=>{setIsSkills(false)}}>
                     <p>02</p>
-                    <h6>// skills</h6>
+                    <a href="#skills">
+                          <h6>// skills</h6>
+                    </a>
                 </div>
                 <div className={`navbar-item ${isProjects? "hover" : ""}`} onMouseEnter={()=>{setIsProjects(true)}} onMouseLeave={()=>{setIsProjects(false)}}>
                     <p>03</p>
-                    <h6>// projects</h6>
+                    <a href="#projects">
+                          <h6>// projects</h6>
+                    </a>
                 </div>
                 <div className={`navbar-item ${isContact? "hover" : ""}`} onMouseEnter={()=>{setIsContact(true)}} onMouseLeave={()=>{setIsContact(false)}}>
-                    <p>04</p>
-                    <h6>// contact</h6>
+                    <p>04</p>                    <a href="#contact">
+                          <h6>// contact</h6>
+                    </a>
                 </div>
 
             </div>
@@ -158,7 +199,7 @@ const Home = () => {
                 <div className="projects-hero">
                     <div className="projects-left">
                         <h1>My Work</h1>
-                        <h3>Deployed web application for peer essay reviewing using a React frontend and a Ruby on Rails backend, hosted through Netlify and Heroku. Uses a local postgreSQL database and fetch to make requests.</h3>
+                        <h3>Web application for peer essay reviewing using a React frontend and a Ruby on Rails backend. Uses a local postgreSQL database and fetch to make requests.</h3>
                     </div>
                     <div className="projects-right">
                         <img src={mockup}></img>
@@ -171,23 +212,61 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="projects-display">
-                    <div className="div1 projects-display-item">
+                    <div className={`div1 projects-display-item ${isOne ? "project-hover" : ""}`} onMouseEnter={()=>{setIsOne(true)}} onMouseLeave={()=>{setIsOne(false)}}>
                         <img src={project1}></img>
                         <div className="projects-display-content">
-                            <h4>Netflix Fullstack Clone</h4>
+                            <h4>Netflix Clone</h4>
                             <p>Web Development</p>
                         </div>
+                        <div className="projects-display-hover-content">
+                            <button className="view-demo">See Demo</button>
+                            <button className="view-code"> View Code</button>
+                        </div>
                     </div>
-                    <div className="div2 projects-display-item"></div>
-                    <div className="div3 projects-display-item"></div>
-                    <div className="div4  projects-display-item projects-display-big-item">
+                    <div className={`div2 projects-display-item ${isTwo ? "project-hover" : ""}`} onMouseEnter={()=>{setIsTwo(true)}} onMouseLeave={()=>{setIsTwo(false)}}>
+                    <img src={project2}></img>
+                        <div className="projects-display-content">
+                            <h4>Ticker Backtest</h4>
+                            <p>Python</p>
+                        </div>
+                        <div className="projects-display-hover-content">
+                            <button className="view-demo">See Demo</button>
+                            <button className="view-code"> View Code</button>
+                        </div>
+                    </div>
+                    <div className={`div3 projects-display-item ${isThree ? "project-hover" : ""}`} onMouseEnter={()=>{setIsThree(true)}} onMouseLeave={()=>{setIsThree(false)}}>
+                    <img src={project3}></img>
+                        <div className="projects-display-content">
+                            <h4>InvestIt</h4>
+                            <p>Web Development</p>
+                        </div>
+                        <div className="projects-display-hover-content">
+                            <button className="view-demo">See Demo</button>
+                            <button className="view-code"> View Code</button>
+                        </div>
+                    </div>
+                    <div className={`div4 projects-display-item ${isFour ? "project-hover" : ""}`} onMouseEnter={()=>{setIsFour(true)}} onMouseLeave={()=>{setIsFour(false)}}>
                         <img src={project4}></img>
                          <div className="projects-display-content big-projects-display-content">
                             <h4>Revieword - Peer Essay Reviewing Web Application</h4>
                             <p>Web Development</p>
                         </div>
+                        <div className="projects-display-hover-content">
+                            <button className="view-demo big-demo-button">See Demo</button>
+                            <button className="view-code big-demo-button"> View Code</button>
+                        </div>
                     </div>
-                    <div className="div5 projects-display-item"></div>
+                    <div className={`div5 projects-display-item ${isFive ? "project-hover" : ""}`} onMouseEnter={()=>{setIsFive(true)}} onMouseLeave={()=>{setIsFive(false)}}>
+                    <img src={project5}></img>
+                        <div className="projects-display-content">
+                            <h4>TwoSum</h4>
+                            <p>Web Development</p>
+                        </div>
+                        <div className="projects-display-hover-content">
+                            <button className="view-demo">See Demo</button>
+                            <button className="view-code"> View Code</button>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -196,28 +275,28 @@ const Home = () => {
 
     <div id="contact">
     
-            <h1 className="section-header">Contact ME</h1>
+            <h1 className="section-header">Contact Me</h1>
 
             <h2>Available for professional work and select freelance opportunities</h2>
             
             <div className="contact-wrapper">
             
                 
-                <form id="contact-form" className="form-horizontal" role="form">
+                <form id="contact-form" class="form-horizontal" role="form" onSubmit={handleFormSubmit}>
                 
                     <div className="form-group">
                         <div className="col-sm-12">
-                        <input type="text" className="form-control" id="name" placeholder="NAME" name="name" value="" required />
+                        <input type="text" className="form-control" id="name" placeholder="NAME" name="fullName"  onChange={handleFormChange} required />
                         </div>
                     </div>
 
                     <div className="form-group">
                         <div className="col-sm-12">
-                        <input type="email" className="form-control " id="email" placeholder="EMAIL" name="email" value="" required />
+                        <input type="email" className="form-control " id="email" placeholder="EMAIL" name="email"  onChange={handleFormChange} required />
                         </div>
                     </div>
 
-                    <textarea className="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+                    <textarea className="form-control" rows="10" placeholder="MESSAGE" name="message" onChange={handleFormChange} required></textarea>
                     
                     <button className="btn btn-primary send-button" id="submit" type="submit" value="SEND">
                         <div className="alt-send-button">

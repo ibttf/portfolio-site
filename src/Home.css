@@ -67,17 +67,29 @@
     margin: 9px;
 
 }
-.navbar-item > h6{
+.navbar-item > a {
+    text-decoration: none;
+}
+.navbar-item > a > h6{
     margin: 0;
+    text-decoration: none;
+    color: white;
+    
     line-height: 0px;
     font-size: 15px;
 }
-
+.navbar-item > a > h6:active{
+    text-decoration: none;
+}
+.navbar-item > a > h6:visited{
+    text-decoration: none;
+}
 .sticky{
     position: sticky;
     top: 0;
     color: rgb(196, 164, 196);
-    height: 5vh;
+    height: 5vw;
+    z-index: 5;
     background-color: black;
 }
 
@@ -175,8 +187,10 @@
     grid-row-gap: 0px;
     margin: 2% 18%;
     border: 4px solid rgb(197, 197, 197);
+    
 
 }
+
 
 .skills-box-item{
     border-right: 4px solid rgb(197, 197, 197);
@@ -344,8 +358,17 @@ padding: 0 16%;
     background-color: rgb(41, 41, 41);
     border-radius: 20px;
 }
+
+.projects-display-item > div{
+    
+}
+
 .projects-display-item > img {
     max-width: 100%;
+    min-width: 100%;
+    min-height: 60%;
+    max-height: 60%;
+    object-fit: cover;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
@@ -376,6 +399,32 @@ padding: 0 16%;
     margin-bottom: 1vw;
 }
 
+.projects-display-hover-content{
+    padding: 0px 60px; 
+    color: rgb(179, 179, 179);
+}
+.projects-display-hover-content > button {
+    background-color: rgb(165, 165, 252);
+    padding: 0.5vw;
+    color: white;
+    font-size: 0.5vw;
+    margin-right: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    transition: 200ms;
+    margin-bottom: 10px;
+    
+}
+.projects-display-hover-content > button:hover{
+    background-color: rgb(111, 111, 182);
+}
+.big-demo-button{
+    font-size: 1vw !important;
+    padding: 1vw !important;
+    margin-bottom: 20px;
+
+}
 .div1 {
      grid-area: 1 / 1 / 3 / 3; 
      color: white;
@@ -749,7 +798,10 @@ input {
         flex-direction: column;
         padding: 0 25%;
     }
-
+    .big-demo-button{
+        font-size: 0.5vw !important;
+        padding: 0.5vw !important;
+    }
 
 
     .projects-display-content {
@@ -757,7 +809,9 @@ input {
         padding: 0px 20px 0px 20px;
 
     }
-
+    .projects-display-hover-content{
+        padding: 0 30px;
+    }
     .projects-display-content > h4{
         font-size: 2vw;
         margin: 10px;
@@ -780,7 +834,14 @@ input {
         margin:10px 10px;
         color: rgb(179, 179, 179);
     }
+    .projects-display-hover-content > button {
 
+        padding: 1w;
+
+        font-size: 1w;
+
+        
+    }
     #contact{
         margin-top: 10%;
     }
