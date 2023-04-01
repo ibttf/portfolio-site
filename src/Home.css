@@ -84,14 +84,7 @@
 .navbar-item > a > h6:visited{
     text-decoration: none;
 }
-.sticky{
-    position: sticky;
-    top: 0;
-    color: rgb(196, 164, 196);
-    height: 5vw;
-    z-index: 5;
-    background-color: black;
-}
+
 
 
 
@@ -330,13 +323,16 @@
     line-height: 0;
     letter-spacing: 0.05em;
 }
-.featured-project >button {
+.featured-project > a >button {
     border: none;
     border-radius: .1vw;
     padding: 1vw 1.5vw;
     background-color: rgb(165, 165, 252);
     font-size: 1vw;
     font-family: monospace;
+}
+.featured-project > a >button:hover {
+    background-color: rgb(111, 111, 182);
 }
 
 
@@ -403,20 +399,21 @@ padding: 0 16%;
     padding: 0px 60px; 
     color: rgb(179, 179, 179);
 }
-.projects-display-hover-content > button {
+.projects-display-hover-content > a > button {
     background-color: rgb(165, 165, 252);
     padding: 0.5vw;
-    color: white;
+    color: black;
+    font-family: monospace;
     font-size: 0.5vw;
     margin-right: 10px;
-    font-weight: bold;
+
     border: none;
     border-radius: 5px;
     transition: 200ms;
     margin-bottom: 10px;
     
 }
-.projects-display-hover-content > button:hover{
+.projects-display-hover-content > a > button:hover{
     background-color: rgb(111, 111, 182);
 }
 .big-demo-button{
@@ -834,7 +831,7 @@ input {
         margin:10px 10px;
         color: rgb(179, 179, 179);
     }
-    .projects-display-hover-content > button {
+    .projects-display-hover-content > a > button {
 
         padding: 1w;
 
@@ -939,7 +936,7 @@ input {
     .featured-project > h3{
         font-size: 5vw;
     }
-    .featured-project > button {
+    .featured-project > a > button {
         font-size: 3vw;
         border-radius: 10px;
         padding: 2vw 3vw;

@@ -21,7 +21,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
-  faReact, faPython
+  faReact, faPython, faGithub
 } from "@fortawesome/free-brands-svg-icons";
 // need to import a logo here
 
@@ -38,7 +38,7 @@ const Home = () => {
     const [isSkills,setIsSkills]=useState(false);
     const [isProjects,setIsProjects]=useState(false);
     const [isContact,setIsContact]=useState(false);
-    const [sticky, setSticky]=useState(false);
+
 
     const [isOne,setIsOne]=useState(false);
     const [isTwo,setIsTwo]=useState(false);
@@ -52,16 +52,6 @@ const Home = () => {
         message: ''
       });
     
-
-        //useEffect to figure out the scroll for the navbar appearance
-    useEffect(() => {
-        const handleScroll = () => {
-        setSticky(window.scrollY > 200);
-        };
-        window.addEventListener("scroll", handleScroll);
-
-        return () => window.removeEventListener("scroll", handleScroll);
-    },[]);
 
     const handleFormChange = (e) => {
 
@@ -82,7 +72,7 @@ const Home = () => {
     }
     return (
             <div id="home">
-            <div className={`navbar ${sticky? "sticky": ""}`}>
+            <div className={`navbar`}>
                 {/* logo here */}
                 <div className={`navbar-item ${isHome? "hover" : ""}`} onMouseEnter={()=>{setIsHome(true)}} onMouseLeave={()=>{setIsHome(false)}}>
                     <p>01</p>
@@ -207,7 +197,10 @@ const Home = () => {
                             <img src={arrow}></img>
                             <h2>Featured Project</h2>
                             <h3>Revieword</h3>
-                            <button>View Project</button>
+                            <a href="https://www.youtube.com/watch?v=vokFeylkhL0" target="blank">
+                                <button>View Project</button>
+                            </a>
+
                         </div>
                     </div>
                 </div>
@@ -219,8 +212,14 @@ const Home = () => {
                             <p>Web Development</p>
                         </div>
                         <div className="projects-display-hover-content">
-                            <button className="view-demo">See Demo</button>
-                            <button className="view-code"> View Code</button>
+                            <a href="https://youtu.be/FP4QHCbJ_sA" target="blank">
+                                <button className="view-demo">See Demo</button>
+                            </a>
+
+                            <a href="https://github.com/roylee0912/netflix-fullstack-clone" target="blank">
+                                <button className="view-code"> View Code</button>
+                            </a>
+                         
                         </div>
                     </div>
                     <div className={`div2 projects-display-item ${isTwo ? "project-hover" : ""}`} onMouseEnter={()=>{setIsTwo(true)}} onMouseLeave={()=>{setIsTwo(false)}}>
@@ -230,8 +229,13 @@ const Home = () => {
                             <p>Python</p>
                         </div>
                         <div className="projects-display-hover-content">
-                            <button className="view-demo">See Demo</button>
-                            <button className="view-code"> View Code</button>
+                            <a href="https://replit.com/@RoyLee8/Ticker-Backtests" target="blank">
+                                <button className="view-demo">See Demo</button>
+                            </a>
+
+                            <a href="https://github.com/roylee0912/netflix-fullstack-clone" target="blank">
+                                <button className="view-code"> View Code</button>
+                            </a>
                         </div>
                     </div>
                     <div className={`div3 projects-display-item ${isThree ? "project-hover" : ""}`} onMouseEnter={()=>{setIsThree(true)}} onMouseLeave={()=>{setIsThree(false)}}>
@@ -241,8 +245,10 @@ const Home = () => {
                             <p>Web Development</p>
                         </div>
                         <div className="projects-display-hover-content">
-                            <button className="view-demo">See Demo</button>
-                            <button className="view-code"> View Code</button>
+
+                            <a href="https://github.com/roylee0912/investit" target="blank">
+                                <button className="view-code"> View Code</button>
+                            </a>
                         </div>
                     </div>
                     <div className={`div4 projects-display-item ${isFour ? "project-hover" : ""}`} onMouseEnter={()=>{setIsFour(true)}} onMouseLeave={()=>{setIsFour(false)}}>
@@ -252,8 +258,13 @@ const Home = () => {
                             <p>Web Development</p>
                         </div>
                         <div className="projects-display-hover-content">
-                            <button className="view-demo big-demo-button">See Demo</button>
-                            <button className="view-code big-demo-button"> View Code</button>
+                            <a href="https://www.youtube.com/watch?v=vokFeylkhL0" target="blank">
+                                <button className="view-demo big-demo-button">See Demo</button>
+                            </a>
+
+                            <a href="https://github.com/roylee0912/revieword" target="blank">
+                                <button className="view-code big-demo-button"> View Code</button>
+                            </a>
                         </div>
                     </div>
                     <div className={`div5 projects-display-item ${isFive ? "project-hover" : ""}`} onMouseEnter={()=>{setIsFive(true)}} onMouseLeave={()=>{setIsFive(false)}}>
@@ -263,8 +274,13 @@ const Home = () => {
                             <p>Web Development</p>
                         </div>
                         <div className="projects-display-hover-content">
-                            <button className="view-demo">See Demo</button>
-                            <button className="view-code"> View Code</button>
+                             <a href="https://youtu.be/u-_kcx4hnHg" target="blank">
+                                <button className="view-demo">See Demo</button>
+                            </a>
+
+                            <a href="https://github.com/roylee0912/twosum-frontend" target="blank">
+                                <button className="view-code"> View Code</button>
+                            </a>
                         </div>
                     </div>
 
@@ -321,12 +337,13 @@ const Home = () => {
                     </ul>
 
                     <ul className="social-media-list">
-                    <li><a href="#" target="_blank" className="contact-icon">
-                        <i className="fa fa-github" aria-hidden="true"></i></a>
+                    <li>
+                    <a href="https://github.com/roylee0912" target="blank" className="contact-icon">
+
+                        <FontAwesomeIcon icon={faGithub}className="fa fa-github"/>
+                    </a>
                     </li>
-                    <li><a href="#" target="_blank" className="contact-icon">
-                        <i className="fa fa-codepen" aria-hidden="true"></i></a>
-                    </li>
+
 
                     </ul>
  
