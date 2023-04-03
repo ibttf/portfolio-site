@@ -1,7 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
+import { useInView } from 'react-intersection-observer';
 import emailjs from "@emailjs/browser"
 import "./Home.css"
 import background from "./background2.jpg"
+import logo from "./logo.png"
 import snippet from "./codesnippet.jpg"
 import mockup from './reviewordmockup.png'
 import arrow from "./arrow.png"
@@ -52,6 +54,16 @@ const Home = () => {
         message: ''
       });
     
+    const {ref: projectHeroLeft, inView: projectHeroLeftIsVisible} = useInView();
+    const {ref: projectHeroRight, inView: projectHeroRightIsVisible} = useInView();
+    const {ref: skillsBoxFirst, inView: skillsBoxFirstIsVisible} = useInView();
+    const {ref: skillsBoxSecond, inView: skillsBoxSecondIsVisible} = useInView();
+    const {ref: skillsBoxThird, inView: skillsBoxThirdIsVisible} = useInView();
+    const {ref: projectOne, inView: projectOneIsVisible} = useInView();
+    const {ref: projectTwo, inView: projectTwoIsVisible} = useInView();
+    const {ref: projectThree, inView: projectThreeIsVisible} = useInView();
+    const {ref: projectFour, inView: projectFourIsVisible} = useInView();
+    const {ref: projectFive, inView: projectFiveIsVisible} = useInView();
 
     const handleFormChange = (e) => {
 
@@ -72,8 +84,14 @@ const Home = () => {
     }
     return (
             <div id="home">
+                <div className="logo-container" onClick={()=>{window.location.reload()}}>
+                    
+                    <img src={logo} className="logo"></img>
+
+                </div>
             <div className={`navbar`}>
                 {/* logo here */}
+
                 <div className={`navbar-item ${isHome? "hover" : ""}`} onMouseEnter={()=>{setIsHome(true)}} onMouseLeave={()=>{setIsHome(false)}}>
                     <p>01</p>
                     <a href="#home">
@@ -120,7 +138,7 @@ const Home = () => {
             <div id="skills">
                 <h1>My Skills</h1>
                 <div className="skills-box">
-                    <div className="skills-box-item">
+                    <div className={`skills-box-item ${skillsBoxFirstIsVisible ? "fadeInOne" : ""}`} ref={skillsBoxFirst}>
                         <div className="skills-box-item-first">
                             <FontAwesomeIcon icon={faComputer} className="skills-box-icon" />
                              <h6><span>Software</span> <br></br>Development</h6>
@@ -140,7 +158,7 @@ const Home = () => {
 
                       
                     </div>
-                    <div className="skills-box-item">
+                    <div className={`skills-box-item ${skillsBoxSecondIsVisible ? "fadeInTwo" : ""}`} ref={skillsBoxSecond}>
                         <div className="skills-box-item-first second">
                             <FontAwesomeIcon icon={faReact} className="skills-box-icon" />
                              <h6><span>Frontend Dev</span><br></br>React, NextJS</h6>
@@ -159,9 +177,9 @@ const Home = () => {
                         </div>
 
                     </div>
-                    <div className="skills-box-item right-skills-box">
+                    <div className={`skills-box-item ${skillsBoxThirdIsVisible ? "fadeInThree" : ""}`} ref={skillsBoxThird}>
 
-                        <div className="skills-box-item-first third">
+                        <div className={`skills-box-item-first third`}>
                             <FontAwesomeIcon icon={faPython} className="skills-box-icon" />
                              <h6><span>Backend Dev</span> <br></br>Ruby, Python, Rails</h6>
                         </div>
@@ -187,11 +205,11 @@ const Home = () => {
 
             <div id="projects">
                 <div className="projects-hero">
-                    <div className="projects-left">
+                    <div className={`projects-left ${projectHeroLeftIsVisible ? "fadeInOne" : ""}`} ref={projectHeroLeft}>
                         <h1>My Work</h1>
                         <h3>Web application for peer essay reviewing using a React frontend and a Ruby on Rails backend. Uses a local postgreSQL database and fetch to make requests.</h3>
                     </div>
-                    <div className="projects-right">
+                    <div className={`projects-right ${projectHeroRightIsVisible ? "fadeInTwo" : ""}`} ref={projectHeroRight}>
                         <img src={mockup}></img>
                         <div className="featured-project">
                             <img src={arrow}></img>
@@ -205,7 +223,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="projects-display">
-                    <div className={`div1 projects-display-item ${isOne ? "project-hover" : ""}`} onMouseEnter={()=>{setIsOne(true)}} onMouseLeave={()=>{setIsOne(false)}}>
+                    <div className={`div1 projects-display-item ${isOne ? "project-hover" : ""} ${projectOneIsVisible? "fadeInOne": ""}`} ref={projectOne} onMouseEnter={()=>{setIsOne(true)}} onMouseLeave={()=>{setIsOne(false)}}>
                         <img src={project1}></img>
                         <div className="projects-display-content">
                             <h4>Netflix Clone</h4>
@@ -222,7 +240,7 @@ const Home = () => {
                          
                         </div>
                     </div>
-                    <div className={`div2 projects-display-item ${isTwo ? "project-hover" : ""}`} onMouseEnter={()=>{setIsTwo(true)}} onMouseLeave={()=>{setIsTwo(false)}}>
+                    <div className={`div2 projects-display-item ${isTwo ? "project-hover" : ""}${projectTwoIsVisible? "fadeInTwo": ""}`} ref={projectTwo} onMouseEnter={()=>{setIsTwo(true)}} onMouseLeave={()=>{setIsTwo(false)}}>
                     <img src={project2}></img>
                         <div className="projects-display-content">
                             <h4>Ticker Backtest</h4>
@@ -233,12 +251,12 @@ const Home = () => {
                                 <button className="view-demo">See Demo</button>
                             </a>
 
-                            <a href="https://github.com/roylee0912/netflix-fullstack-clone" target="blank">
+                            <a href="https://replit.com/@RoyLee8/Ticker-Backtests" target="blank">
                                 <button className="view-code"> View Code</button>
                             </a>
                         </div>
                     </div>
-                    <div className={`div3 projects-display-item ${isThree ? "project-hover" : ""}`} onMouseEnter={()=>{setIsThree(true)}} onMouseLeave={()=>{setIsThree(false)}}>
+                    <div className={`div3 projects-display-item ${isThree ? "project-hover" : ""}${projectThreeIsVisible? "fadeInThree": ""}`} ref={projectThree} onMouseEnter={()=>{setIsThree(true)}} onMouseLeave={()=>{setIsThree(false)}}>
                     <img src={project3}></img>
                         <div className="projects-display-content">
                             <h4>InvestIt</h4>
@@ -251,7 +269,7 @@ const Home = () => {
                             </a>
                         </div>
                     </div>
-                    <div className={`div4 projects-display-item ${isFour ? "project-hover" : ""}`} onMouseEnter={()=>{setIsFour(true)}} onMouseLeave={()=>{setIsFour(false)}}>
+                    <div className={`div4 projects-display-item ${isFour ? "project-hover" : ""}${projectFourIsVisible? "fadeInOne": ""}`} ref={projectFour} onMouseEnter={()=>{setIsFour(true)}} onMouseLeave={()=>{setIsFour(false)}}>
                         <img src={project4}></img>
                          <div className="projects-display-content big-projects-display-content">
                             <h4>Revieword - Peer Essay Reviewing Web Application</h4>
@@ -267,7 +285,7 @@ const Home = () => {
                             </a>
                         </div>
                     </div>
-                    <div className={`div5 projects-display-item ${isFive ? "project-hover" : ""}`} onMouseEnter={()=>{setIsFive(true)}} onMouseLeave={()=>{setIsFive(false)}}>
+                    <div className={`div5 projects-display-item ${isFive ? "project-hover" : ""}${projectFiveIsVisible? "fadeInTwo": ""}`} ref={projectFive} onMouseEnter={()=>{setIsFive(true)}} onMouseLeave={()=>{setIsFive(false)}}>
                     <img src={project5}></img>
                         <div className="projects-display-content">
                             <h4>TwoSum</h4>
