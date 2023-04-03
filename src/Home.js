@@ -59,11 +59,7 @@ const Home = () => {
     const {ref: skillsBoxFirst, inView: skillsBoxFirstIsVisible} = useInView();
     const {ref: skillsBoxSecond, inView: skillsBoxSecondIsVisible} = useInView();
     const {ref: skillsBoxThird, inView: skillsBoxThirdIsVisible} = useInView();
-    const {ref: projectOne, inView: projectOneIsVisible} = useInView();
-    const {ref: projectTwo, inView: projectTwoIsVisible} = useInView();
-    const {ref: projectThree, inView: projectThreeIsVisible} = useInView();
-    const {ref: projectFour, inView: projectFourIsVisible} = useInView();
-    const {ref: projectFive, inView: projectFiveIsVisible} = useInView();
+
 
     const handleFormChange = (e) => {
 
@@ -223,7 +219,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="projects-display">
-                    <div className={`div1 projects-display-item ${isOne ? "project-hover" : ""} ${projectOneIsVisible? "fadeInOne": ""}`} ref={projectOne} onMouseEnter={()=>{setIsOne(true)}} onMouseLeave={()=>{setIsOne(false)}}>
+                    <div className={`div1 projects-display-item ${isOne ? "project-hover" : ""} `}  onMouseEnter={()=>{setIsOne(true)}} onMouseLeave={()=>{setIsOne(false)}}>
                         <img src={project1}></img>
                         <div className="projects-display-content">
                             <h4>Netflix Clone</h4>
@@ -240,7 +236,7 @@ const Home = () => {
                          
                         </div>
                     </div>
-                    <div className={`div2 projects-display-item ${isTwo ? "project-hover" : ""}${projectTwoIsVisible? "fadeInTwo": ""}`} ref={projectTwo} onMouseEnter={()=>{setIsTwo(true)}} onMouseLeave={()=>{setIsTwo(false)}}>
+                    <div className={`div2 projects-display-item ${isTwo ? "project-hover" : ""}`}  onMouseEnter={()=>{setIsTwo(true)}} onMouseLeave={()=>{setIsTwo(false)}}>
                     <img src={project2}></img>
                         <div className="projects-display-content">
                             <h4>Ticker Backtest</h4>
@@ -256,7 +252,7 @@ const Home = () => {
                             </a>
                         </div>
                     </div>
-                    <div className={`div3 projects-display-item ${isThree ? "project-hover" : ""}${projectThreeIsVisible? "fadeInThree": ""}`} ref={projectThree} onMouseEnter={()=>{setIsThree(true)}} onMouseLeave={()=>{setIsThree(false)}}>
+                    <div className={`div3 projects-display-item ${isThree ? "project-hover" : ""}`}  onMouseEnter={()=>{setIsThree(true)}} onMouseLeave={()=>{setIsThree(false)}}>
                     <img src={project3}></img>
                         <div className="projects-display-content">
                             <h4>InvestIt</h4>
@@ -269,7 +265,7 @@ const Home = () => {
                             </a>
                         </div>
                     </div>
-                    <div className={`div4 projects-display-item ${isFour ? "project-hover" : ""}${projectFourIsVisible? "fadeInOne": ""}`} ref={projectFour} onMouseEnter={()=>{setIsFour(true)}} onMouseLeave={()=>{setIsFour(false)}}>
+                    <div className={`div4 projects-display-item ${isFour ? "project-hover" : ""}`} onMouseEnter={()=>{setIsFour(true)}} onMouseLeave={()=>{setIsFour(false)}}>
                         <img src={project4}></img>
                          <div className="projects-display-content big-projects-display-content">
                             <h4>Revieword - Peer Essay Reviewing Web Application</h4>
@@ -285,7 +281,7 @@ const Home = () => {
                             </a>
                         </div>
                     </div>
-                    <div className={`div5 projects-display-item ${isFive ? "project-hover" : ""}${projectFiveIsVisible? "fadeInTwo": ""}`} ref={projectFive} onMouseEnter={()=>{setIsFive(true)}} onMouseLeave={()=>{setIsFive(false)}}>
+                    <div className={`div5 projects-display-item ${isFive ? "project-hover" : ""}`}  onMouseEnter={()=>{setIsFive(true)}} onMouseLeave={()=>{setIsFive(false)}}>
                     <img src={project5}></img>
                         <div className="projects-display-content">
                             <h4>TwoSum</h4>
