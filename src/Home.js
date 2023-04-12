@@ -12,6 +12,7 @@ import project2 from "./project2.jpg"
 import project3 from "./project3.png"
 import project4 from "./project4.JPG"
 import project5 from "./project5.png"
+import bigProject from "./bigProject.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faComputer,
@@ -53,12 +54,26 @@ const Home = () => {
         email: '',
         message: ''
       });
-    
-    const {ref: projectHeroLeft, inView: projectHeroLeftIsVisible} = useInView();
-    const {ref: projectHeroRight, inView: projectHeroRightIsVisible} = useInView();
-    const {ref: skillsBoxFirst, inView: skillsBoxFirstIsVisible} = useInView();
-    const {ref: skillsBoxSecond, inView: skillsBoxSecondIsVisible} = useInView();
-    const {ref: skillsBoxThird, inView: skillsBoxThirdIsVisible} = useInView();
+
+    const {ref: heroContent, inView: heroContentIsVisible} = useInView({
+        triggerOnce: true
+    });
+    const {ref: projectHeroLeft, inView: projectHeroLeftIsVisible} = useInView({
+        triggerOnce: true
+    });
+    const {ref: projectHeroRight, inView: projectHeroRightIsVisible} = useInView({
+        triggerOnce: true
+    });
+    const {ref: skillsBoxFirst, inView: skillsBoxFirstIsVisible} = useInView({
+        triggerOnce: true
+    });
+    const {ref: skillsBoxSecond, inView: skillsBoxSecondIsVisible} = useInView({
+        triggerOnce: true
+    });
+    const {ref: skillsBoxThird, inView: skillsBoxThirdIsVisible} = useInView({
+        triggerOnce: true
+    });
+
 
 
     const handleFormChange = (e) => {
@@ -119,7 +134,7 @@ const Home = () => {
                 <img src={background} className="hero-background"></img>
                 <div className="hero">
                     <h1>ROY LEE</h1>
-                    <h2>SOFTWARE ENGINEER,   WEB DEVELOPER</h2>
+                    <h2 className={`${heroContentIsVisible ? "fadeInThree" : ""}`} ref={heroContent}>SOFTWARE ENGINEER,   WEB DEVELOPER</h2>
                     <div className="container">
                         <div className="chevron"></div>
                         <div className="chevron"></div>
@@ -206,7 +221,7 @@ const Home = () => {
                         <h3>Web application for peer essay reviewing using a React frontend and a Ruby on Rails backend. Uses a local postgreSQL database and fetch to make requests.</h3>
                     </div>
                     <div className={`projects-right ${projectHeroRightIsVisible ? "fadeInTwo" : ""}`} ref={projectHeroRight}>
-                        <img src={mockup}></img>
+                        <img src={bigProject}></img>
                         <div className="featured-project">
                             <img src={arrow}></img>
                             <h2>Featured Project</h2>
@@ -225,6 +240,7 @@ const Home = () => {
                             <h4>Netflix Clone</h4>
                             <p>Web Development</p>
                         </div>
+
                         <div className="projects-display-hover-content">
                             <a href="https://youtu.be/FP4QHCbJ_sA" target="blank">
                                 <button className="view-demo">See Demo</button>
@@ -235,6 +251,7 @@ const Home = () => {
                             </a>
                          
                         </div>
+                       
                     </div>
                     <div className={`div2 projects-display-item ${isTwo ? "project-hover" : ""}`}  onMouseEnter={()=>{setIsTwo(true)}} onMouseLeave={()=>{setIsTwo(false)}}>
                     <img src={project2}></img>
