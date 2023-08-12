@@ -1,16 +1,14 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState} from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Link } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import emailjs from "@emailjs/browser"
 import "../styles/animations.css"
-import logo from "../styles/logo.png"
 
-import {VscThreeBars} from "react-icons/vsc"
 import {HiOutlineDesktopComputer} from "react-icons/hi"
 import {BiLogoReact, BiPaperPlane} from "react-icons/bi"
 import {ImLocation2} from "react-icons/im"
 import {TbBrandPython} from "react-icons/tb"
-import {AiOutlineClose, AiFillPhone,AiFillMail, AiFillGithub} from "react-icons/ai"
+import {AiFillPhone,AiFillMail, AiFillGithub} from "react-icons/ai"
 import codesnippet from "../styles/codesnippet.jpg"
 import bigproject from "../styles/bigProject.png"
 import arrow from "../styles/arrow.png"
@@ -21,7 +19,7 @@ import project4 from "../styles/project4.JPG"
 import project6 from "../styles/project6.png"
 
 const Home = () => {
-
+  const navigate=useNavigate();
   const [open,setOpen]=useState(false);
   const [values, setValues] = useState({
       fullName: '',
@@ -48,8 +46,6 @@ const Home = () => {
           message: ''
         });
   }
-
-  const [sticky,setSticky]=useState(false)
   const {ref: heroContent, inView: heroContentIsVisible} = useInView({
       triggerOnce: true
   });
@@ -62,74 +58,10 @@ const Home = () => {
   const {ref: skillsBoxFirst, inView: skillsBoxFirstIsVisible} = useInView({
       triggerOnce: true
   });
-  useEffect(() => {
-    const handleScroll = () => {
-      setSticky(window.scrollY > 0);
-    };
-    window.addEventListener("scroll", handleScroll);
-  
-    },[])
+
   return(
     <div className={`${open ? "" : ""} duration-300`}>
     
-    {/* ===================================================== */}
-    {/* NAVBAR */}
-    {/* ===================================================== */}
-    <nav className={`fixed top-0 z-10 ${sticky? "bg-gray-900" : ""} duration-300 ease-in-out w-screen`}>
-    {/* LOGO */}
-        <div>
-          <img src={logo} className="absolute lg:top-4 xl:left-20 xl:w-60 sm:w-48 w-24 md:left-32 sm:left-24 left-16 md:top-3 sm:top-1 top-2.5 hover:cursor-pointer"
-                          onClick={()=>window.location.reload()}/>
-        </div>
-      {/* DESKTOP NAV */}
-        <div className="xl:grid hidden w-6/12 mx-auto  grid-cols-4 text-center py-8 text-gray-100">
-          <div className={`w-full text-center`}>
-            
-            <a href="#home" className="text-center mx-auto w-fit flex flex-col cursor-pointer hover:text-white hover:scale-110 duration-100 ease-in-out">
-              <span className="text-xs text-right font-normal">01</span>
-              // home
-            </a>
-          </div>
-          <div className={`w-full text-center`}>
-            
-            <a href="#skills" className="text-center mx-auto w-fit flex flex-col cursor-pointer hover:text-white hover:scale-110 duration-100 ease-in-out">
-              <span className="text-xs text-right font-normal">02</span>
-              // skills
-            </a>
-          </div>
-          <div className={`w-full text-center`}>
-            
-            <a href="#projects" className="text-center mx-auto w-fit flex flex-col cursor-pointer hover:text-white hover:scale-110 duration-100 ease-in-out">
-              <span className="text-xs text-right font-normal">03</span>
-              // projects
-            </a>
-          </div>
-          <div className={`w-full text-center`}>
-            
-            <a href="#contact" className="text-center mx-auto w-fit flex flex-col cursor-pointer hover:text-white hover:scale-110 duration-100 ease-in-out">
-              <span className="text-xs text-right font-normal">04</span>
-              // contact
-            </a>
-          </div>
-
-        </div>
-        {/* MOBILE NAV */}
-        <div className="xl:hidden grid relative md:ml-12 ml-6 py-4 z-10">
-            <VscThreeBars className={`${open ? "" : ""} duration-300 cursor-pointer text-white md:w-12 md:h-12 sm:h-8 sm:w-8 h-4 w-4`} onClick={()=>{setOpen(!open)}}/>
-           
-
-            <div className={`${open ? "text-gray-700 xl:-translate-x-full flex": "-translate-x-full"} duration-300 fixed px-4 top-0 left-0 bg-gray-100 flex-col h-screen w-10/12` }>
-                <AiOutlineClose className={`cursor-pointer text-gray-700 h-10 w-10 p-2 rounded-full hover:bg-gray-200 duration-1000  mt-4 `} onClick={()=>{setOpen(!open)}}/>
-                <a href="#home" className="py-2 cursor-pointer font-light-bubble md:text-xl text-sm" onClick={()=>{setOpen(!open)}}>// home</a>
-                <a href="#skills" className=" py-2 cursor-pointer font-light-bubble md:text-xl text-sm" onClick={()=>{setOpen(!open)}}>// skills</a>
-                <a href="#projects" className=" py-2 cursor-pointer font-light-bubble md:text-xl text-sm" onClick={()=>{setOpen(!open)}}>// projects</a>
-                <a href="#contact" className=" pb-4 py-2 cursor-pointer font-light-bubble md:text-xl text-sm" onClick={()=>{setOpen(!open)}}>// contact</a>
-
-            </div>
-        </div>
-    </nav>
-
-
 
 
     {/* ===================================================== */}
@@ -235,7 +167,7 @@ const Home = () => {
           <div className="w-fit flex flex-col items-center text-xl text-white">
             <h3 className="lg:text-2xl text-sm">Featured Project</h3>
             <h2 className="lg:text-4xl sm:text-xl text-lg font-semibold">Revieword</h2>
-            <a href="https://cheery-mermaid-a47c44.netlify.app" target="_blank" className="lg:text-sm text-xs font-semibold w-fit mt-3 whitespace-nowrap lg:px-4 px-3 lg:py-2 py-1.5 text-left bg-blue-200 text-gray-900  rounded-md cursor-pointers hover:bg-blue-300 duration-300">See Demo</a>
+            <a href="/revieword" className="lg:text-sm text-xs font-semibold w-fit mt-3 whitespace-nowrap lg:px-4 px-3 lg:py-2 py-1.5 text-left bg-blue-200 text-gray-900  rounded-md cursor-pointers hover:bg-blue-300 duration-300">View Project</a>
           </div>
         </div>
       </div>
@@ -249,7 +181,7 @@ const Home = () => {
     <div className='h-full bg-gray-900 md:py-72 py-24'>
       <div className='auto-rows-max grid grid-flow-row lg:grid-cols-3 grid-cols-1 md:gap-6 gap-3 xl:w-9/12 sm:w-8/12 w-10/12 mx-auto'>
         {/* PROJECT 1 */}
-        <div className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
+        <div  onClick={()=>{navigate('/netflix-clone')}} className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
           <div style={{backgroundColor: "#363636"}} className="overflow-hidden flex items-center justify-center rounded-t-sm hover:rounded-t-none duration-0">
             <img src={project1} className="duration-200 group-hover:scale-110 ease-in" style={{height: "16rem", objectFit: "cover", width:"100rem", aspectRatio:"16:9"}}/>
           </div>
@@ -266,7 +198,7 @@ const Home = () => {
         </div>
 
         {/* PROJECT 2 */}
-        <div className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
+        <div onClick={()=>{navigate('/beelikecoders')}} className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
           <div style={{backgroundColor: "#363636"}} className="overflow-hidden flex items-center justify-center rounded-t-sm hover:rounded-t-none duration-0">
             <img src={project2} className="duration-200 group-hover:scale-110 ease-in" style={{height: "16rem", objectFit: "cover", width:"100rem", aspectRatio:"16:9"}}/>
           </div>
@@ -282,7 +214,7 @@ const Home = () => {
           </div>
         </div>
         {/* PROJECT 3 */}
-        <div className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
+        <div  onClick={()=>{navigate('/ticker-backtest')}} className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
           <div style={{backgroundColor: "#363636"}} className="overflow-hidden flex items-center justify-center rounded-t-sm hover:rounded-t-none duration-0">
             <img src={project3} className="duration-200 group-hover:scale-110 ease-in" style={{height: "16rem", objectFit: "cover", width:"100rem", aspectRatio:"16:9"}}/>
           </div>
@@ -299,7 +231,7 @@ const Home = () => {
         </div>
 
         {/* PROJECT 4 */}
-        <div className="lg:col-span-2 lg:row-span-2 col-span-1 row-span-1 cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
+        <div  onClick={()=>{navigate('/revieword')}} className="lg:col-span-2 lg:row-span-2 col-span-1 row-span-1 cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
           <div style={{backgroundColor: "#363636"}} className="w-full h-full overflow-hidden flex items-center justify-center rounded-t-sm hover:rounded-t-none duration-0">
             <img src={project4} className="duration-200 group-hover:scale-110 ease-in" style={{height: "100%", objectFit:"cover"}}/>
           </div>
@@ -317,7 +249,7 @@ const Home = () => {
 
 
         {/* PROJECT 5 */}
-        <div className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
+        <div  onClick={()=>{navigate('/prepwhiz')}} className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
           <div style={{backgroundColor: "#363636"}} className="overflow-hidden flex items-center justify-center rounded-t-sm hover:rounded-t-none duration-0">
             <img src={project6} className="duration-200 group-hover:scale-110 ease-in" style={{height: "100%", objectFit: "cover", width:"100rem"}}/>
           </div>
