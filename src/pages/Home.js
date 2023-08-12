@@ -67,7 +67,7 @@ const Home = () => {
     {/* ===================================================== */}
     {/* HERO */}
     {/* ===================================================== */}
-      <div className="hero h-screen flex text-center" id="home">
+      <div className={`hero bg-[url(../styles/background2.jpg)] h-screen flex text-center`} id="home">
         {/* TEXT */}
         <div className="relative w-screen flex flex-col text-white h-screen items-center justify-center">
           <h1 className="2xl:text-9xl lg:text-8xl sm:text-6xl text-4xl font-bold lg:py-16 py-8">
@@ -276,9 +276,9 @@ const Home = () => {
 
 
 
-    <div id="contact" className="bg-gray-900 pt-48">
-      <h1 className="text-7xl text-center uppercase text-white underline decoration-purple-300 decoration-8 font-semibold py-4" style={{  font: "'Oswald', sans-serif"}}>Contact Me</h1>
-      <h2>Available for professional work and select freelance opportunities</h2>
+    <div id="contact" className="bg-gray-900 lg:pt-48 sm:pt-24 pt-12">
+      <h1 className="lg:text-7xl sm:text-5xl text-4xl text-center uppercase text-white underline decoration-purple-300 lg:decoration-8 decoration-4 font-semibold lg:py-4 py-2" style={{  font: "'Oswald', sans-serif"}}>Contact Me</h1>
+      <h2 className="lg:text-md sm:text-sm text-xs">Available for professional work and select freelance opportunities</h2>
 
       <div className="contact-wrapper">
         <form id="contact-form" class="form-horizontal" role="form" onSubmit={handleFormSubmit}>

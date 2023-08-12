@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
 
 .hero{
-  background: url("../styles/background2.jpg") no-repeat center center fixed;
+  background: no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -451,6 +451,7 @@ input {
 
 /* Begin Media Queries*/
 @media screen and (max-width: 850px) {
+  
   .contact-wrapper {
     display: flex;
     flex-direction: column;
@@ -458,6 +459,7 @@ input {
   }
   .direct-contact-container, .form-horizontal {
     margin: 24px auto;
+    width:90%;
   }  
   
   .direct-contact-container {
