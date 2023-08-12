@@ -42,7 +42,7 @@ const TickerBacktest = () => {
                             </div>
                         </div>
                     </div>
-                    <a href="https://cheery-mermaid-a47c44.netlify.app" target="_blank" className="hover:text-gray-200 duration-300 lg:w-8/12 w-full mx-auto lg:text-lg md:text-md text-sm cursor-pointer">Open Project -&gt;</a>
+                    <a href="https://replit.com/@RoyLee8/Ticker-Backtests" target="_blank" className="hover:text-gray-200 duration-300 lg:w-8/12 w-full mx-auto lg:text-lg md:text-md text-sm cursor-pointer">Open Project -&gt;</a>
                     
                 </div>
             </div>
