@@ -167,7 +167,7 @@ const Home = () => {
           <div className="w-fit flex flex-col items-center text-xl text-white">
             <h3 className="lg:text-2xl text-sm">Featured Project</h3>
             <h2 className="lg:text-4xl sm:text-xl text-lg font-semibold">Revieword</h2>
-            <a href="/revieword" className="lg:text-sm text-xs font-semibold w-fit mt-3 whitespace-nowrap lg:px-4 px-3 lg:py-2 py-1.5 text-left bg-blue-200 text-gray-900  rounded-md cursor-pointers hover:bg-blue-300 duration-300">View Project</a>
+            <div onClick={()=>{navigate('/beelikecoders')}} className="lg:text-sm text-xs font-semibold w-fit mt-3 whitespace-nowrap lg:px-4 px-3 lg:py-2 py-1.5 text-left bg-blue-200 text-gray-900  rounded-md cursor-pointers hover:bg-blue-300 duration-300">View Project</div>
           </div>
         </div>
       </div>
