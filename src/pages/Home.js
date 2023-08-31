@@ -17,7 +17,7 @@ import project2 from "../styles/project2.png"
 import project3 from "../styles/project2.jpg"
 import project4 from "../styles/project4.JPG"
 import project6 from "../styles/project6.png"
-
+import project7 from "../styles/project7.png"
 const Home = () => {
   const navigate=useNavigate();
   const [open,setOpen]=useState(false);
@@ -258,6 +258,22 @@ const Home = () => {
               <h4 className="2xl:text-2xl lg:text-xl text-md text-gray-200 font-semibold">PrepWhiz - Test Prep (Current)</h4> 
               <div className=' text-gray-300 flex group-hover:-translate-x-1/2 duration-300' style={{width:"300%", fontSize:"0.6rem"}}>
                 <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0 ">Fullstack Web Development</h5>
+                <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0">See Project — </h5>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        {/* PROJECT 6 */}
+        <div  onClick={()=>{navigate('/bayborhood')}} className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
+          <div style={{backgroundColor: "#363636"}} className="overflow-hidden flex items-center justify-center rounded-t-sm hover:rounded-t-none duration-0">
+            <img src={project7} className="duration-200 group-hover:scale-110 ease-in" style={{height: "100%", objectFit: "cover", width:"100rem"}}/>
+          </div>
+          <div className="lg:h-1/3 h-1/4 py-4 bg-gray-800 flex flex-col justify-center text-gray-100 relative">
+            <div className="xl:w-8/12 w-11/12 mx-auto">
+              <h4 className="2xl:text-2xl lg:text-xl text-md text-gray-200 font-semibold">Bayborhood - Data Visualization</h4> 
+              <div className=' text-gray-300 flex group-hover:-translate-x-1/2 duration-300' style={{width:"300%", fontSize:"0.6rem"}}>
+                <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0 ">Data Analysis/Frontend Web Development</h5>
                 <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0">See Project — </h5>
               </div>
 

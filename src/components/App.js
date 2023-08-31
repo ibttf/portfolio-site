@@ -6,6 +6,7 @@ import BeeLikeCoders from '../pages/BeeLikeCoders';
 import Netflixclone from "../pages/Netflixclone"
 import TickerBacktest from "../pages/TickerBacktest"
 import PrepWhiz from "../pages/PrepWhiz"
+import Bayborhood from '../pages/Bayborhood';
 import Navbar from './Navbar';
 const App = () => {
     return (
@@ -14,6 +15,12 @@ const App = () => {
             <>
               <Navbar />
               <Revieword />
+            </>
+          } />
+        <Route path="/bayborhood" element={
+            <>
+              <Navbar />
+              <Bayborhood />
             </>
           } />
         <Route path="/beelikecoders" element={
