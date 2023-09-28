@@ -7,10 +7,24 @@ import Netflixclone from "../pages/Netflixclone"
 import TickerBacktest from "../pages/TickerBacktest"
 import PrepWhiz from "../pages/PrepWhiz"
 import Bayborhood from '../pages/Bayborhood';
+import DVCConnect from '../pages/DVCConnect';
+import IsolationIndex from '../pages/IsolationIndex';
 import Navbar from './Navbar';
 const App = () => {
     return (
         <Routes>
+          <Route path="/isolation-index" element={
+            <>
+              <Navbar />
+              <IsolationIndex />
+            </>
+          } />
+          <Route path="/dvc-connect" element={
+            <>
+              <Navbar />
+              <DVCConnect />
+            </>
+          } />
         <Route path="/revieword" element={
             <>
               <Navbar />
@@ -33,12 +47,6 @@ const App = () => {
             <>
               <Navbar />
               <TickerBacktest />
-            </>
-          } />
-        <Route path="/netflix-clone" element={
-            <>
-              <Navbar />
-              <Netflixclone />
             </>
           } />
         <Route path="/prepwhiz" element={

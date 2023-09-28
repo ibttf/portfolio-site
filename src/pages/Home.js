@@ -10,14 +10,14 @@ import {ImLocation2} from "react-icons/im"
 import {TbBrandPython} from "react-icons/tb"
 import {AiFillPhone,AiFillMail, AiFillGithub} from "react-icons/ai"
 import codesnippet from "../styles/codesnippet.jpg"
-import bigproject from "../styles/bigProject.png"
 import arrow from "../styles/arrow.png"
-import project1 from "../styles/project1.png"
+import project1 from "../styles/isolation-index/1.png"
 import project2 from "../styles/project2.png"
 import project3 from "../styles/project2.jpg"
-import project4 from "../styles/project4.JPG"
 import project6 from "../styles/project6.png"
-import project7 from "../styles/project7.png"
+import project7 from "../styles/project7-cropped.png"
+import project8 from "../styles/dvc-connect/1.png"
+import bigOne from "../styles/bayborhood/bigOne.png"
 const Home = () => {
   const navigate=useNavigate();
   const [open,setOpen]=useState(false);
@@ -122,7 +122,7 @@ const Home = () => {
                         <h6 className="pt-1">&lt;/h4&gt;</h6>
                     </div>
                     <h6 className="text-gray-400 lg:text-lg sm:text-xl text-xs"> 
-                    Passionate about UI/UX. Experience in HTML, CSS, JS, React, Bootstrap, Tailwind, SCSS, and Netlify.
+                    Passionate about UI/UX. Experience in HTML, CSS, JS, TS, React, Tailwind, SCSS, Netlify, and Vercel.
                     </h6>
                 </div>
             </div>
@@ -138,7 +138,7 @@ const Home = () => {
                         <h6 className="pt-1">&lt;/h4&gt;</h6>
                     </div>
                     <h6 className="text-gray-400 lg:text-lg sm:text-xl text-xs"> 
-                    Familiar with databases and backend frameworks, including SQL, NoSQL, PostgreSQL, SQLite3, MongoDB, Ruby on Rails, NodeJS, and Express.
+                    Familiar with databases and backend frameworks, including Node, Express MongoDB, MySQL, NoSQL, PostgreSQL, SQLite3, Flask, Ruby on Rails, and Prisma.
                     </h6>
                 </div>
             </div>
@@ -158,16 +158,16 @@ const Home = () => {
         <div className={` ${projectHeroLeftIsVisible ? "fadeInOne" : ""}`} ref={projectHeroLeft}>
           <h1 className={` lg:w-full w-11/12 lg:text-8xl sm:text-6xl text-4xl text-white lg:text-left text-center lg:pt-36 pt-12 font-bold`}>My Work</h1>
           <p className="text-white lg:text-lg sm:text-xl text-xs xl:w-full lg:w-10/12  md:w-11/12 md:mr-auto md:mx-0  lg:pt-12 pt-6 mx-auto text-left lg:pb-0 pb-24">
-            Deployed fullstack web application for submitting and reviewing peer essays. Built with a React frontend, Node/Express backend with a custom JWT authentication system
+            Deployed application to help find your ideal neighborhood in San Francisco based on various filters. Collected data from various public APIs, parsed, processed, and filtered using Python.
           </p>
         </div>
         <div className={`col-span-2 xl:-mb-48 md:-mb-36 ${projectHeroLeftIsVisible ? "fadeInTwo" : ""}`} ref={projectHeroRight}>
-          <img src={bigproject} className="relative w-full "/>
+          <img src={bigOne} className="relative w-full "/>
           <img src={arrow} className="-scale-x-100 rotate-180 relative w-2/12 lg:left-24 sm:left-16 left-4"/>
           <div className="w-fit flex flex-col items-center text-xl text-white">
             <h3 className="lg:text-2xl text-sm">Featured Project</h3>
-            <h2 className="lg:text-4xl sm:text-xl text-lg font-semibold">Revieword</h2>
-            <div onClick={()=>{navigate('/beelikecoders')}} className="lg:text-sm text-xs font-semibold w-fit mt-3 whitespace-nowrap lg:px-4 px-3 lg:py-2 py-1.5 text-left bg-blue-200 text-gray-900  rounded-md cursor-pointers hover:bg-blue-300 duration-300">View Project</div>
+            <h2 className="lg:text-4xl sm:text-xl text-lg font-semibold">Bayborhood</h2>
+            <div onClick={()=>{navigate('/bayborhood')}} className=" cursor-pointer lg:text-sm text-xs font-semibold w-fit mt-3 whitespace-nowrap lg:px-4 px-3 lg:py-2 py-1.5 text-left bg-blue-200 text-gray-900  rounded-md cursor-pointers hover:bg-blue-300 duration-75">View Project</div>
           </div>
         </div>
       </div>
@@ -181,15 +181,15 @@ const Home = () => {
     <div className='h-full bg-gray-900 md:py-72 py-24'>
       <div className='auto-rows-max grid grid-flow-row lg:grid-cols-3 grid-cols-1 md:gap-6 gap-3 xl:w-9/12 sm:w-8/12 w-10/12 mx-auto'>
         {/* PROJECT 1 */}
-        <div  onClick={()=>{navigate('/netflix-clone')}} className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
+        <div  onClick={()=>{navigate('/isolation-index')}} className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
           <div style={{backgroundColor: "#363636"}} className="overflow-hidden flex items-center justify-center rounded-t-sm hover:rounded-t-none duration-0">
             <img src={project1} className="duration-200 group-hover:scale-110 ease-in" style={{height: "16rem", objectFit: "cover", width:"100rem", aspectRatio:"16:9"}}/>
           </div>
           <div className="lg:h-1/3 h-1/4 py-4 bg-gray-800 flex flex-col justify-center text-gray-100 relative">
             <div className="xl:w-8/12 w-11/12 mx-auto">
-              <h4 className="2xl:text-2xl lg:text-xl text-md text-gray-200 font-semibold">Netflix Clone</h4> 
+              <h4 className="2xl:text-2xl lg:text-xl text-md text-gray-200 font-semibold">Isolation Index</h4> 
               <div className=' text-gray-300 flex group-hover:-translate-x-1/2 duration-300' style={{width:"300%", fontSize:"0.6rem"}}>
-                <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0 ">Fullstack Web Development</h5>
+                <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0 ">Data Visualization</h5>
                 <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0">See Project — </h5>
               </div>
 
@@ -231,15 +231,15 @@ const Home = () => {
         </div>
 
         {/* PROJECT 4 */}
-        <div  onClick={()=>{navigate('/revieword')}} className="lg:col-span-2 lg:row-span-2 col-span-1 row-span-1 cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
+        <div  onClick={()=>{navigate('/bayborhood')}} className="lg:col-span-2 lg:row-span-2 col-span-1 row-span-1 cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
           <div style={{backgroundColor: "#363636"}} className="w-full h-full overflow-hidden flex items-center justify-center rounded-t-sm hover:rounded-t-none duration-0">
-            <img src={project4} className="duration-200 group-hover:scale-110 ease-in" style={{height: "100%", objectFit:"cover"}}/>
+            <img src={project7} className=" duration-200 group-hover:scale-110 ease-in" style={{height: "100%", objectFit:"cover"}}/>
           </div>
           <div className="lg:h-1/3 h-1/4 py-4 bg-gray-800 flex flex-col justify-center text-gray-100 relative">
             <div className="xl:w-8/12 w-11/12 mx-auto">
-              <h4 className="2xl:text-3xl lg:text-xl text-md text-gray-200 font-semibold">Revieword - Peer Essay Reviewing </h4> 
+              <h4 className="2xl:text-3xl lg:text-xl text-md text-gray-200 font-semibold">Bayborhood - GIS and Data Analysis </h4> 
               <div className=' text-gray-300 flex group-hover:-translate-x-1/2 duration-300' style={{width:"300%", fontSize:"0.6rem"}}>
-                <h5 className="2xl:text-md xl:text-lg lg:text-md md:text-sm w-full duration-0 ">Fullstack Web Development</h5>
+                <h5 className="2xl:text-md xl:text-lg lg:text-md md:text-sm w-full duration-0 ">Data Visualization</h5>
                 <h5 className="2xl:text-md xl:text-lg lg:text-md md:text-sm w-full duration-0">See Project — </h5>
               </div>
 
@@ -265,15 +265,15 @@ const Home = () => {
           </div>
         </div>
         {/* PROJECT 6 */}
-        <div  onClick={()=>{navigate('/bayborhood')}} className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
+        <div  onClick={()=>{navigate('/dvc-connect')}} className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col">
           <div style={{backgroundColor: "#363636"}} className="overflow-hidden flex items-center justify-center rounded-t-sm hover:rounded-t-none duration-0">
-            <img src={project7} className="duration-200 group-hover:scale-110 ease-in" style={{height: "100%", objectFit: "cover", width:"100rem"}}/>
+            <img src={project8} className="duration-200 group-hover:scale-110 ease-in" style={{height: "100%", objectFit: "cover", width:"100rem"}}/>
           </div>
           <div className="lg:h-1/3 h-1/4 py-4 bg-gray-800 flex flex-col justify-center text-gray-100 relative">
             <div className="xl:w-8/12 w-11/12 mx-auto">
-              <h4 className="2xl:text-2xl lg:text-xl text-md text-gray-200 font-semibold">Bayborhood - Data Visualization</h4> 
+              <h4 className="2xl:text-2xl lg:text-xl text-md text-gray-200 font-semibold">DVC Connect</h4> 
               <div className=' text-gray-300 flex group-hover:-translate-x-1/2 duration-300' style={{width:"300%", fontSize:"0.6rem"}}>
-                <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0 ">Data Analysis/Frontend Web Development</h5>
+                <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0 ">Fullstack Web Development</h5>
                 <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0">See Project — </h5>
               </div>
 
@@ -332,12 +332,8 @@ const Home = () => {
               </li>
               
               <li className="flex items-center lg:w-full w-9/12 mx-auto">
-                <AiFillPhone  className="lg:w-6 lg:h-6 w-5 h-5 text-gray-400"/>
-                <span className="text-gray-400 lg:text-lg text-sm lg:py-4 py-2 font-bold phone"><a href="tel:1-470-919-2464" title="Give me a call">(470) 919-2464</a></span></li>
-              
-              <li className="flex items-center lg:w-full w-9/12 mx-auto">
                 <AiFillMail className="lg:w-6 lg:h-6 w-5 h-5 text-gray-400"/>
-                <span className="text-gray-400 lg:text-lg text-xs lg:py-4 py-2 font-bold  gmail form-email"><a href="mailto:leeroy0912@yahoo.com" title="Send me an email">leeroy0912@yahoo.com</a></span></li>
+                <span className="text-gray-400 lg:text-lg text-xs lg:py-4 py-2 font-bold  gmail form-email"><a href="mailto:churlee12@gmail.com" title="Send me an email">churlee12@gmail.com</a></span></li>
               
               </ul>
 
