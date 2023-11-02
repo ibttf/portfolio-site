@@ -11,13 +11,13 @@ import { TbBrandPython } from "react-icons/tb";
 import { AiFillMail, AiFillGithub } from "react-icons/ai";
 import codesnippet from "../styles/codesnippet.jpg";
 import arrow from "../styles/arrow.png";
-import project1 from "../styles/isolation-index/1.png";
-import project2 from "../styles/project2.png";
-import project3 from "../styles/project2.jpg";
-import project6 from "../styles/go-playground/1.png";
+import project1 from "../styles/internio/1.png";
+import project2 from "../styles/beelikecoders/1.png";
+import project3 from "../styles/go-playground/1.png";
+import project6 from "../styles/recappd/1.png";
 import project7 from "../styles/project7-cropped.png";
 import project8 from "../styles/dvc-connect/1.png";
-import bigOne from "../styles/bayborhood/bigOne.png";
+import bigOne from "../styles/internio/project-hero-right.png";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -194,7 +194,7 @@ const Home = () => {
               <h6 className="text-gray-400 lg:text-lg sm:text-xl text-xs">
                 Familiar with databases and backend frameworks, including Node,
                 Express, NoSQL (MongoDB), SQL (Postgres, Prisma), Django, Flask,
-                Gin, and Ruby on Rails.
+                Ruby on Rails, AWS, Docker, and Nginx.
               </h6>
             </div>
           </div>
@@ -220,9 +220,9 @@ const Home = () => {
               My Work
             </h1>
             <p className="text-white lg:text-lg sm:text-xl text-xs xl:w-full lg:w-10/12  md:w-11/12 md:mr-auto md:mx-0  lg:pt-12 pt-6 mx-auto text-left lg:pb-0 pb-24">
-              Deployed application to help find your ideal neighborhood in San
-              Francisco based on various filters. Collected data from various
-              public APIs, parsed, processed, and filtered using Python.
+              Deployed web scraping application that takes listings from top job
+              sites to get the latest internship opportunities in tech. Scraped
+              the data with beautifulSoup and processed the data with APIs.
             </p>
           </div>
           <div
@@ -239,11 +239,12 @@ const Home = () => {
             <div className="w-fit flex flex-col items-center text-xl text-white">
               <h3 className="lg:text-2xl text-sm">Featured Project</h3>
               <h2 className="lg:text-4xl sm:text-xl text-lg font-semibold">
-                Bayborhood
+                Internio
               </h2>
               <div
                 onClick={() => {
-                  navigate("/bayborhood");
+                  navigate("/internio");
+                  window.scrollTo(0, 0);
                 }}
                 className=" cursor-pointer lg:text-sm text-xs font-semibold w-fit mt-3 whitespace-nowrap lg:px-4 px-3 lg:py-2 py-1.5 text-left bg-blue-200 text-gray-900  rounded-md cursor-pointers hover:bg-blue-300 duration-75"
               >
@@ -262,7 +263,8 @@ const Home = () => {
           {/* PROJECT 1 */}
           <div
             onClick={() => {
-              navigate("/isolation-index");
+              navigate("/bayborhood");
+              window.scrollTo(0, 0);
             }}
             className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col"
           >
@@ -271,7 +273,7 @@ const Home = () => {
               className="overflow-hidden flex items-center justify-center rounded-t-sm hover:rounded-t-none duration-0"
             >
               <img
-                src={project1}
+                src={project7}
                 className="duration-200 group-hover:scale-110 ease-in"
                 style={{
                   height: "16rem",
@@ -284,14 +286,14 @@ const Home = () => {
             <div className="lg:h-1/3 h-1/4 py-4 bg-gray-800 flex flex-col justify-center text-gray-100 relative">
               <div className="xl:w-8/12 w-11/12 mx-auto">
                 <h4 className="2xl:text-2xl lg:text-xl text-md text-gray-200 font-semibold">
-                  Isolation Index
+                  Bayborhood
                 </h4>
                 <div
                   className=" text-gray-300 flex group-hover:-translate-x-1/2 duration-300"
                   style={{ width: "300%", fontSize: "0.6rem" }}
                 >
                   <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0 ">
-                    Data Visualization
+                    Data Visualization, Frontend Web Development
                   </h5>
                   <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0">
                     See Project —{" "}
@@ -305,6 +307,7 @@ const Home = () => {
           <div
             onClick={() => {
               navigate("/beelikecoders");
+              window.scrollTo(0, 0);
             }}
             className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col"
           >
@@ -345,7 +348,8 @@ const Home = () => {
           {/* PROJECT 3 */}
           <div
             onClick={() => {
-              navigate("/go-playground");
+              navigate("/recappd");
+              window.scrollTo(0, 0);
             }}
             className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col"
           >
@@ -362,7 +366,7 @@ const Home = () => {
             <div className="lg:h-1/3 h-1/4 py-4 bg-gray-800 flex flex-col justify-center text-gray-100 relative">
               <div className="xl:w-8/12 w-11/12 mx-auto">
                 <h4 className="2xl:text-2xl lg:text-xl text-md text-gray-200 font-semibold">
-                  Go Playground - Learn Go (Current)
+                  Recappd
                 </h4>
                 <div
                   className=" text-gray-300 flex group-hover:-translate-x-1/2 duration-300"
@@ -382,7 +386,8 @@ const Home = () => {
           {/* PROJECT 4 */}
           <div
             onClick={() => {
-              navigate("/bayborhood");
+              navigate("/internio");
+              window.scrollTo(0, 0);
             }}
             className="lg:col-span-2 lg:row-span-2 col-span-1 row-span-1 cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col"
           >
@@ -391,7 +396,7 @@ const Home = () => {
               className="w-full h-full overflow-hidden flex items-center justify-center rounded-t-sm hover:rounded-t-none duration-0"
             >
               <img
-                src={project7}
+                src={project1}
                 className=" duration-200 group-hover:scale-110 ease-in"
                 style={{ height: "100%", objectFit: "cover" }}
               />
@@ -399,14 +404,14 @@ const Home = () => {
             <div className="lg:h-1/3 h-1/4 py-4 bg-gray-800 flex flex-col justify-center text-gray-100 relative">
               <div className="xl:w-8/12 w-11/12 mx-auto">
                 <h4 className="2xl:text-3xl lg:text-xl text-md text-gray-200 font-semibold">
-                  Bayborhood - GIS and Data Analysis{" "}
+                  Bayborhood
                 </h4>
                 <div
                   className=" text-gray-300 flex group-hover:-translate-x-1/2 duration-300"
                   style={{ width: "300%", fontSize: "0.6rem" }}
                 >
                   <h5 className="2xl:text-md xl:text-lg lg:text-md md:text-sm w-full duration-0 ">
-                    Data Visualization
+                    Web Scraping, DevOps, Fullstack Web Development
                   </h5>
                   <h5 className="2xl:text-md xl:text-lg lg:text-md md:text-sm w-full duration-0">
                     See Project —{" "}
@@ -419,7 +424,8 @@ const Home = () => {
           {/* PROJECT 5 */}
           <div
             onClick={() => {
-              navigate("/ticker-backtest");
+              navigate("/go-playground");
+              window.scrollTo(0, 0);
             }}
             className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col"
           >
@@ -441,14 +447,14 @@ const Home = () => {
             <div className="lg:h-1/3 h-1/4 py-4 bg-gray-800 flex flex-col justify-center text-gray-100 relative">
               <div className="xl:w-8/12 w-11/12 mx-auto">
                 <h4 className="2xl:text-2xl lg:text-xl text-md text-gray-200 font-semibold">
-                  Ticker Backtest
+                  Go Playground
                 </h4>
                 <div
                   className=" text-gray-300 flex group-hover:-translate-x-1/2 duration-300"
                   style={{ width: "300%", fontSize: "0.6rem" }}
                 >
                   <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0 ">
-                    Data Science
+                    Fullstack Web Development
                   </h5>
                   <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0">
                     See Project —{" "}
@@ -461,6 +467,7 @@ const Home = () => {
           <div
             onClick={() => {
               navigate("/dvc-connect");
+              window.scrollTo(0, 0);
             }}
             className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col"
           >
