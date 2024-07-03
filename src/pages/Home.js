@@ -80,7 +80,7 @@ const Home = () => {
             } 2xl:text-3xl lg:text-2xl text-sm`}
             ref={heroContent}
           >
-            SOFTWARE ENGINEER, WEB DEVELOPER
+            CS @ COLUMBIA, SOFTWARE ENGINEER
           </h2>
           <div className="container flex relative justify-center">
             <div className="chevron absolute lg:w-12 lg:h-2 sm:w-8 w-6 h-1 "></div>
@@ -95,7 +95,7 @@ const Home = () => {
       {/* ===================================================== */}
       <div id="skills" className="bg-gray-900 h-full">
         <h1 className="lg:text-8xl sm:text-6xl text-4xl text-white text-center lg:py-36 py-12 font-bold">
-          My Skills
+          Skills
         </h1>
         <div className="grid lg:grid-cols-3 2xl:w-8/12 w-11/12 mx-auto text-white">
           <div
