@@ -25,13 +25,13 @@ const Home = () => {
   const [values, setValues] = useState({
     fullName: "",
     email: "",
-    message: "",
+    message: ""
   });
 
   const handleFormChange = (e) => {
     setValues((values) => ({
       ...values,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     }));
   };
 
@@ -43,21 +43,21 @@ const Home = () => {
     setValues({
       fullName: "",
       email: "",
-      message: "",
+      message: ""
     });
   };
   const { ref: heroContent, inView: heroContentIsVisible } = useInView({
-    triggerOnce: true,
+    triggerOnce: true
   });
   const { ref: projectHeroLeft, inView: projectHeroLeftIsVisible } = useInView({
-    triggerOnce: true,
+    triggerOnce: true
   });
   const { ref: projectHeroRight, inView: projectHeroRightIsVisible } =
     useInView({
-      triggerOnce: true,
+      triggerOnce: true
     });
   const { ref: skillsBoxFirst, inView: skillsBoxFirstIsVisible } = useInView({
-    triggerOnce: true,
+    triggerOnce: true
   });
 
   return (
@@ -279,7 +279,7 @@ const Home = () => {
                   height: "16rem",
                   objectFit: "cover",
                   width: "100rem",
-                  aspectRatio: "16:9",
+                  aspectRatio: "16:9"
                 }}
               />
             </div>
@@ -322,7 +322,7 @@ const Home = () => {
                   height: "16rem",
                   objectFit: "cover",
                   width: "100rem",
-                  aspectRatio: "16:9",
+                  aspectRatio: "16:9"
                 }}
               />
             </div>
@@ -440,7 +440,7 @@ const Home = () => {
                   height: "16rem",
                   objectFit: "cover",
                   width: "100rem",
-                  aspectRatio: "16:9",
+                  aspectRatio: "16:9"
                 }}
               />
             </div>
@@ -448,43 +448,6 @@ const Home = () => {
               <div className="xl:w-8/12 w-11/12 mx-auto">
                 <h4 className="2xl:text-2xl lg:text-xl text-md text-gray-200 font-semibold">
                   Go Playground
-                </h4>
-                <div
-                  className=" text-gray-300 flex group-hover:-translate-x-1/2 duration-300"
-                  style={{ width: "300%", fontSize: "0.6rem" }}
-                >
-                  <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0 ">
-                    Fullstack Web Development
-                  </h5>
-                  <h5 className="2xl:text-sm xl:text-lg lg:text-md md:text-sm w-full duration-0">
-                    See Project —{" "}
-                  </h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* PROJECT 6 */}
-          <div
-            onClick={() => {
-              navigate("/dvc-connect");
-              window.scrollTo(0, 0);
-            }}
-            className="cursor-pointer h-full group rounded-sm overflow-hidden hover:rounded-t-none flex flex-col"
-          >
-            <div
-              style={{ backgroundColor: "#363636" }}
-              className="overflow-hidden flex items-center justify-center rounded-t-sm hover:rounded-t-none duration-0"
-            >
-              <img
-                src={project8}
-                className="duration-200 group-hover:scale-110 ease-in"
-                style={{ height: "100%", objectFit: "cover", width: "100rem" }}
-              />
-            </div>
-            <div className="lg:h-1/3 h-1/4 py-4 bg-gray-800 flex flex-col justify-center text-gray-100 relative">
-              <div className="xl:w-8/12 w-11/12 mx-auto">
-                <h4 className="2xl:text-2xl lg:text-xl text-md text-gray-200 font-semibold">
-                  DVC Connect
                 </h4>
                 <div
                   className=" text-gray-300 flex group-hover:-translate-x-1/2 duration-300"
@@ -582,15 +545,18 @@ const Home = () => {
               <li className="flex items-center lg:w-full w-9/12 mx-auto">
                 <ImLocation2 className="lg:w-6 lg:h-6 w-5 h-5 text-gray-400" />
                 <span className="text-gray-400 lg:text-lg text-sm lg:py-4 py-2 font-bold place ">
-                  Pleasant Hill, CA
+                  New York, NY
                 </span>
               </li>
 
               <li className="flex items-center lg:w-full w-9/12 mx-auto">
                 <AiFillMail className="lg:w-6 lg:h-6 w-5 h-5 text-gray-400" />
                 <span className="text-gray-400 lg:text-lg text-xs lg:py-4 py-2 font-bold  gmail form-email">
-                  <a href="mailto:churlee12@gmail.com" title="Send me an email">
-                    churlee12@gmail.com
+                  <a
+                    href="mailto:chungin.lee@columbia.edu"
+                    title="Send me an email"
+                  >
+                    chungin.lee@columbia.edu
                   </a>
                 </span>
               </li>
@@ -598,7 +564,7 @@ const Home = () => {
 
             <ul className="social-media-list">
               <li>
-                <Link to="https://github.com/roylee0912" className="">
+                <Link to="https://github.com/ibttf" className="">
                   <AiFillGithub className="w-full h-full" />
                 </Link>
               </li>
