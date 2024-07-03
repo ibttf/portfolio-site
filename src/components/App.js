@@ -5,7 +5,6 @@ import BeeLikeCoders from "../pages/BeeLikeCoders";
 import GoPlayground from "../pages/GoPlayground";
 import Recappd from "../pages/Recappd";
 import Bayborhood from "../pages/Bayborhood";
-import DVCConnect from "../pages/DVCConnect";
 import IsolationIndex from "../pages/IsolationIndex";
 import Internio from "../pages/Internio";
 import Navbar from "./Navbar";
@@ -30,15 +29,7 @@ const App = () => {
           </>
         }
       />
-      <Route
-        path="/dvc-connect"
-        element={
-          <>
-            <Navbar />
-            <DVCConnect />
-          </>
-        }
-      />
+
       <Route
         path="/bayborhood"
         element={
